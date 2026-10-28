@@ -1,0 +1,250 @@
+{
+  "product": {
+    "overview": "Overview",
+    "groups": "Firing",
+    "silences": "Silences",
+    "oncall": "On-call",
+    "routing": "Routing",
+    "history": "History",
+    "setup": "Setup",
+    "members": "Members",
+    "signIn": "Sign-in",
+    "apiTokens": "API tokens",
+    "account": "Account",
+    "loading": "Loading",
+    "reading": "Reading what fires and who is on call."
+  },
+  "alertStates": {
+    "firing": "Firing",
+    "silenced": "Silenced",
+    "resolved": "Resolved"
+  },
+  "silenceStates": {
+    "active": "Active",
+    "pending": "Starts later",
+    "expired": "Ended"
+  },
+  "kinds": {
+    "firing": "Firing",
+    "repeat": "Repeat",
+    "escalation": "Escalation",
+    "resolved": "Resolved",
+    "test": "Test"
+  },
+  "contactKinds": {
+    "slack": "Slack",
+    "teams": "Teams",
+    "webhook": "Webhook"
+  },
+  "contactHints": {
+    "slack": "An incoming webhook of a Slack app: https://hooks.slack.com/services/…",
+    "teams": "A Teams workflow that posts a card it is sent to a channel.",
+    "webhook": "Any address: it gets the whole group as JSON, for a phone or SMS provider among others."
+  },
+  "search": {
+    "group": "Alert"
+  },
+  "matchers": {
+    "label": "Label",
+    "op": "Is",
+    "value": "Value",
+    "remove": "Remove this matcher",
+    "add": "Add a matcher"
+  },
+  "overviewPage": {
+    "overview": "Overview",
+    "description": "What fires now, who is on call and what was sent.",
+    "failed_one": "{{count}} notification did not get through in the last day",
+    "failed_other": "{{count}} notifications did not get through in the last day",
+    "failedDetail": "Nobody was told of those alerts. Check the contact point: its webhook may have been removed.",
+    "see": "See which",
+    "unrouted_one": "{{count}} group fires that no route takes",
+    "unrouted_other": "{{count}} groups fire that no route takes",
+    "unroutedDetail": "Nobody is told of them. Add a route with no matchers last, to take everything left.",
+    "firing": "Firing",
+    "alertsCount_one": "{{count}} alert",
+    "alertsCount_other": "{{count}} alerts",
+    "unacknowledged": "Not acknowledged",
+    "silenced": "Silenced",
+    "silencesCount_one": "{{count}} silence",
+    "silencesCount_other": "{{count}} silences",
+    "sent24h": "Sent, 24 h",
+    "firingNow": "Firing now",
+    "quiet": "Nothing fires",
+    "quietDetail": "When Prometheus or a product sends an alert, it shows here.",
+    "onCallNow": "On call now",
+    "noSchedules": "No schedules",
+    "perHour": "Notifications per hour",
+    "perHourDetail": "The last 24 hours, tests left out.",
+    "sent": "Sent"
+  },
+  "welcomePage": {
+    "getStarted": "Get started",
+    "description": "Alerts takes alerts from Prometheus, products and scripts, groups those of one problem, and tells whoever is on call.",
+    "steps": "Four steps",
+    "step1": "Add a contact point under Routing: a Slack or Teams channel, or any webhook.",
+    "step2": "Add a route that sends to it. A route with no matchers takes every alert.",
+    "step3": "Under On-call, make a schedule, so each notification names who is on call.",
+    "step4": "Point Prometheus at Alerts as its Alertmanager, or send alerts from a script. See Setup.",
+    "alreadyFiring_one": "{{count}} alert fires already, and nobody is told until a route takes it",
+    "alreadyFiring_other": "{{count}} alerts fire already, and nobody is told until a route takes them"
+  },
+  "groupsPage": {
+    "groups": "Firing",
+    "description": "Alerts of one problem, as people are told about them: grouped by the route's labels.",
+    "group": "Group",
+    "state": "State",
+    "alerts": "Alerts",
+    "route": "Route",
+    "unrouted": "No route",
+    "who": "Who",
+    "ackedBy": "Acknowledged by {{who}}",
+    "onCall": "{{who}} on call",
+    "since": "Since",
+    "all": "All",
+    "noneDetail": "Choose another state."
+  },
+  "groupPage": {
+    "notFound": "Group not found",
+    "notFoundDetail": "Its alerts resolved over an hour ago, or it never existed.",
+    "back": "Back to firing",
+    "description": "Route {{route}}, since {{since}}.",
+    "unrouted": "No route takes these alerts, so nobody is told.",
+    "ack": "Acknowledge",
+    "unack": "Take back",
+    "silence": "Silence",
+    "acked": "Acknowledged by {{who}} on {{when}}",
+    "ackedDetail": "No repeats and no escalation until a new alert joins the group.",
+    "onCall": "On call: {{who}}",
+    "alert": "Alert",
+    "alerts": "Alerts",
+    "notifications": "Notifications",
+    "noNotifications": "Nobody told yet",
+    "noNotificationsDetail": "A group is told of after the group wait, 30 seconds unless set otherwise."
+  },
+  "silencesPage": {
+    "silences": "Silences",
+    "description": "Maintenance windows. A silence stops notifications, never the alerts: they stay on the screens.",
+    "new": "New silence",
+    "newDetail": "Alerts whose labels match every matcher are silenced.",
+    "for": "For",
+    "hours_one": "{{count}} hour",
+    "hours_other": "{{count}} hours",
+    "comment": "Why",
+    "commentPlaceholder": "Disk swap on db-1",
+    "create": "Silence",
+    "matchers": "Matchers",
+    "state": "State",
+    "silenced": "Silenced",
+    "ends": "Ends",
+    "end": "End now",
+    "none": "No silences"
+  },
+  "oncallPage": {
+    "oncall": "On-call",
+    "description": "Who is on call: members take turns, and notifications name the person on call.",
+    "new": "New schedule",
+    "edit": "Change {{name}}",
+    "name": "Name",
+    "namePlaceholder": "Database",
+    "shift": "Each shift",
+    "shifts": {
+      "12": "12 hours",
+      "24": "A day",
+      "168": "A week",
+      "336": "Two weeks"
+    },
+    "start": "First shift starts",
+    "startHint": "Now when left empty.",
+    "members": "Members, in turn",
+    "membersHint": "One per line. After a comma, a Slack user id such as U024BE7LH mentions them in Slack.",
+    "save": "Save",
+    "none": "No schedules",
+    "noneDetail": "Make one so notifications say who is on call.",
+    "now": "{{who}} is on call now.",
+    "notStarted": "Its first shift has not started.",
+    "change": "Change",
+    "delete": "Delete {{name}}",
+    "next": "Next shifts of {{name}}"
+  },
+  "routingPage": {
+    "routing": "Routing",
+    "description": "Where notifications go. Routes are tried in order; the first whose matchers all match takes the alert.",
+    "contactPoints": "Contact points",
+    "contactPointsDetail": "Their addresses are kept sealed and never shown again in full. Only admins add or delete them.",
+    "name": "Name",
+    "kind": "Kind",
+    "target": "Posts to",
+    "last": "Last sent",
+    "test": "Test",
+    "testOk": "Test sent",
+    "deleteContact": "Delete {{name}}",
+    "noContacts": "No contact points",
+    "noContactsDetail": "Add a Slack or Teams channel, or a webhook.",
+    "addContact": "Add contact point",
+    "url": "Address",
+    "routes": "Routes",
+    "routesDetail": "Group by the labels of one problem, such as alertname and cluster. Repeat until someone acknowledges; escalate when nobody does.",
+    "noRoutes": "No routes: nobody is told of anything.",
+    "routeN": "Route {{n}}",
+    "routeName": "Database team",
+    "sendTo": "Send to",
+    "schedule": "On call from",
+    "noSchedule": "No schedule",
+    "when": "When the alert has",
+    "groupBy": "Group by",
+    "repeat": "Repeat every (minutes)",
+    "escalateAfter": "Escalate after (minutes)",
+    "never": "Never",
+    "escalateTo": "Escalate to",
+    "nobody": "Nobody",
+    "up": "Up",
+    "down": "Down",
+    "remove": "Remove",
+    "addRoute": "Add route",
+    "save": "Save routes"
+  },
+  "historyPage": {
+    "history": "History",
+    "description": "Every notification sent, newest first, and whether it got through.",
+    "when": "When",
+    "kind": "Kind",
+    "group": "Group",
+    "to": "To",
+    "result": "Result",
+    "sent": "Sent",
+    "failed": "Failed",
+    "none": "Nothing sent"
+  },
+  "setupPage": {
+    "setup": "Setup",
+    "description": "How alerts reach Alerts. Each needs ALERTS_INGEST_TOKEN, or an API token with the editor role.",
+    "prometheus": "Prometheus and vmalert",
+    "prometheusDetail": "Your alerting rules stay where they are: Alerts takes their alerts as an Alertmanager would.",
+    "script": "A script or product",
+    "scriptDetail": "Send the alert again while it holds; it resolves after five minutes without one, or at its endsAt.",
+    "alertmanager": "An Alertmanager you keep",
+    "alertmanagerDetail": "Its webhook works too, with the status of each alert."
+  },
+  "settingsPage": {
+    "adminsOnly": "Admins only",
+    "askAnAdmin": "Ask an admin of this alerts.",
+    "signOut": "Sign out",
+    "account": {
+      "title": "Account",
+      "description": "Your profile, password, two-step verification and where you are signed in."
+    },
+    "members": {
+      "title": "Members",
+      "description": "Who can sign in to this alerts, and with which role. Viewers see everything; editors also acknowledge, silence, keep schedules and test contact points; admins also add contact points and change routes, and manage members and tokens."
+    },
+    "signin": {
+      "title": "Sign-in",
+      "description": "Identity providers people can sign in with, such as OpenAsy Identity, Keycloak or Microsoft Entra ID, and which of their groups give which role."
+    },
+    "tokens": {
+      "title": "API tokens",
+      "description": "For scripts and CI. Each token has one role and an expiry; the secret is shown once."
+    }
+  }
+}

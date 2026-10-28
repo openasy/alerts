@@ -1,0 +1,36 @@
+# Alerts. Prometheus, products and scripts send alerts; Alerts groups them, routes them to the team that owns them,
+# holds back silenced ones and tells whoever is on call by Slack, Teams or a webhook (ADR 0059).
+#
+#   openssl rand -hex 32 > openasy-kek   # alerts' key: sign-in secrets and contact point addresses (ADR 0021). Keep it with your backups
+#   docker compose up -d
+#   docker compose logs alerts | grep 'no owner yet'   # the one-time link that creates the owner account
+services:
+  alerts:
+    image: ghcr.io/openasy/alerts:0.1.0
+    restart: unless-stopped
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    tmpfs: [/tmp]
+    ports:
+      - "127.0.0.1:8080:8080" # UI and API; put a TLS proxy in front to reach it from elsewhere
+    volumes:
+      - alerts-data:/data # SQLite database: alerts, routes, schedules, silences and notifications
+    secrets:
+      - openasy-kek # mounted at /run/secrets/openasy-kek
+    environment:
+      # The address people open Alerts at; with a TLS proxy in front, its https:// URL. Notifications link to it.
+      ALERTS_PUBLIC_URL: ${ALERTS_PUBLIC_URL:-http://localhost:8080}
+      # For Prometheus, products and scripts: it can send alerts and nothing else.
+      ALERTS_INGEST_TOKEN: ${ALERTS_INGEST_TOKEN:-}
+      # Sign in with your identity provider (OIDC), see the README:
+      # OPENASY_OIDC_ISSUER: https://login.example.com
+      # OPENASY_OIDC_CLIENT_ID: alerts
+      # OPENASY_OIDC_CLIENT_SECRET: ${OPENASY_OIDC_CLIENT_SECRET}
+
+volumes:
+  alerts-data:
+
+secrets:
+  openasy-kek:
+    file: ./openasy-kek

@@ -1,0 +1,250 @@
+{
+  "product": {
+    "overview": "Genel bakış",
+    "groups": "Tetiklenen",
+    "silences": "Susturmalar",
+    "oncall": "Nöbet",
+    "routing": "Yönlendirme",
+    "history": "Geçmiş",
+    "setup": "Kurulum",
+    "members": "Üyeler",
+    "signIn": "Oturum açma",
+    "apiTokens": "API belirteçleri",
+    "account": "Hesap",
+    "loading": "Yükleniyor",
+    "reading": "Tetiklenenler ve nöbetçiler okunuyor."
+  },
+  "alertStates": {
+    "firing": "Tetikleniyor",
+    "silenced": "Susturuldu",
+    "resolved": "Çözüldü"
+  },
+  "silenceStates": {
+    "active": "Etkin",
+    "pending": "Daha sonra başlar",
+    "expired": "Bitti"
+  },
+  "kinds": {
+    "firing": "Tetiklenme",
+    "repeat": "Tekrar",
+    "escalation": "Eskalasyon",
+    "resolved": "Çözüldü",
+    "test": "Test"
+  },
+  "contactKinds": {
+    "slack": "Slack",
+    "teams": "Teams",
+    "webhook": "Webhook"
+  },
+  "contactHints": {
+    "slack": "Bir Slack uygulamasının gelen webhook'u: https://hooks.slack.com/services/…",
+    "teams": "Gönderilen kartı bir kanala yazan bir Teams iş akışı.",
+    "webhook": "Herhangi bir adres: grubun tamamını JSON olarak alır; örneğin bir telefon ya da SMS sağlayıcısı için."
+  },
+  "search": {
+    "group": "Uyarı"
+  },
+  "matchers": {
+    "label": "Etiket",
+    "op": "Koşul",
+    "value": "Değer",
+    "remove": "Bu eşleyiciyi kaldır",
+    "add": "Eşleyici ekle"
+  },
+  "overviewPage": {
+    "overview": "Genel bakış",
+    "description": "Şu an tetiklenenler, nöbette kimin olduğu ve gönderilenler.",
+    "failed_one": "Son bir günde {{count}} bildirim ulaşmadı",
+    "failed_other": "Son bir günde {{count}} bildirim ulaşmadı",
+    "failedDetail": "Bu uyarılardan kimseye haber verilmedi. İletişim noktasını kontrol et: webhook'u kaldırılmış olabilir.",
+    "see": "Hangileri",
+    "unrouted_one": "Hiçbir rotanın almadığı {{count}} grup tetikleniyor",
+    "unrouted_other": "Hiçbir rotanın almadığı {{count}} grup tetikleniyor",
+    "unroutedDetail": "Bunlardan kimseye haber verilmiyor. Geri kalan her şeyi alması için en sona eşleyicisiz bir rota ekle.",
+    "firing": "Tetiklenen",
+    "alertsCount_one": "{{count}} uyarı",
+    "alertsCount_other": "{{count}} uyarı",
+    "unacknowledged": "Üstlenilmeyen",
+    "silenced": "Susturulan",
+    "silencesCount_one": "{{count}} susturma",
+    "silencesCount_other": "{{count}} susturma",
+    "sent24h": "Gönderilen, 24 sa",
+    "firingNow": "Şu an tetiklenen",
+    "quiet": "Tetiklenen bir şey yok",
+    "quietDetail": "Prometheus ya da bir ürün uyarı gönderdiğinde burada görünür.",
+    "onCallNow": "Şu an nöbette",
+    "noSchedules": "Nöbet çizelgesi yok",
+    "perHour": "Saat başına bildirim",
+    "perHourDetail": "Son 24 saat, testler hariç.",
+    "sent": "Gönderilen"
+  },
+  "welcomePage": {
+    "getStarted": "Başlarken",
+    "description": "Alerts; Prometheus'tan, ürünlerden ve betiklerden uyarı alır, aynı soruna ait olanları gruplar ve nöbetteki kişiye haber verir.",
+    "steps": "Dört adım",
+    "step1": "Yönlendirme altında bir iletişim noktası ekle: bir Slack ya da Teams kanalı veya herhangi bir webhook.",
+    "step2": "Ona gönderen bir rota ekle. Eşleyicisiz bir rota her uyarıyı alır.",
+    "step3": "Nöbet altında bir çizelge oluştur; böylece her bildirim nöbetteki kişiyi adlandırır.",
+    "step4": "Prometheus'u Alertmanager olarak Alerts'e yönlendir ya da bir betikten uyarı gönder. Kurulum'a bak.",
+    "alreadyFiring_one": "{{count}} uyarı zaten tetikleniyor ve bir rota onu alana kadar kimseye haber verilmiyor",
+    "alreadyFiring_other": "{{count}} uyarı zaten tetikleniyor ve bir rota onları alana kadar kimseye haber verilmiyor"
+  },
+  "groupsPage": {
+    "groups": "Tetiklenen",
+    "description": "Aynı soruna ait uyarılar, kişilere bildirildikleri gibi: rotanın etiketlerine göre gruplanmış.",
+    "group": "Grup",
+    "state": "Durum",
+    "alerts": "Uyarı",
+    "route": "Rota",
+    "unrouted": "Rota yok",
+    "who": "Kim",
+    "ackedBy": "{{who}} üstlendi",
+    "onCall": "Nöbette {{who}}",
+    "since": "Başlangıç",
+    "all": "Tümü",
+    "noneDetail": "Başka bir durum seç."
+  },
+  "groupPage": {
+    "notFound": "Grup bulunamadı",
+    "notFoundDetail": "Uyarıları bir saatten uzun süre önce çözüldü ya da hiç olmadı.",
+    "back": "Tetiklenenlere dön",
+    "description": "{{route}} rotası, {{since}} tarihinden beri.",
+    "unrouted": "Bu uyarıları hiçbir rota almıyor, bu yüzden kimseye haber verilmiyor.",
+    "ack": "Üstlen",
+    "unack": "Geri al",
+    "silence": "Sustur",
+    "acked": "{{who}}, {{when}} tarihinde üstlendi",
+    "ackedDetail": "Gruba yeni bir uyarı katılana kadar tekrar ve eskalasyon yok.",
+    "onCall": "Nöbette: {{who}}",
+    "alert": "Uyarı",
+    "alerts": "Uyarılar",
+    "notifications": "Bildirimler",
+    "noNotifications": "Henüz kimseye haber verilmedi",
+    "noNotificationsDetail": "Bir gruba grup bekleme süresinden sonra, aksi ayarlanmadıysa 30 saniye sonra, haber verilir."
+  },
+  "silencesPage": {
+    "silences": "Susturmalar",
+    "description": "Bakım pencereleri. Susturma bildirimleri durdurur, uyarıları asla: ekranlarda kalırlar.",
+    "new": "Yeni susturma",
+    "newDetail": "Etiketleri her eşleyiciye uyan uyarılar susturulur.",
+    "for": "Süre",
+    "hours_one": "{{count}} saat",
+    "hours_other": "{{count}} saat",
+    "comment": "Neden",
+    "commentPlaceholder": "db-1'de disk değişimi",
+    "create": "Sustur",
+    "matchers": "Eşleyiciler",
+    "state": "Durum",
+    "silenced": "Susturulan",
+    "ends": "Biter",
+    "end": "Şimdi bitir",
+    "none": "Susturma yok"
+  },
+  "oncallPage": {
+    "oncall": "Nöbet",
+    "description": "Nöbette kim var: üyeler sırayla nöbet tutar ve bildirimler nöbetteki kişiyi adlandırır.",
+    "new": "Yeni çizelge",
+    "edit": "{{name}} çizelgesini değiştir",
+    "name": "Ad",
+    "namePlaceholder": "Veritabanı",
+    "shift": "Her nöbet",
+    "shifts": {
+      "12": "12 saat",
+      "24": "Bir gün",
+      "168": "Bir hafta",
+      "336": "İki hafta"
+    },
+    "start": "İlk nöbetin başlangıcı",
+    "startHint": "Boş bırakılırsa şimdi.",
+    "members": "Üyeler, sırayla",
+    "membersHint": "Her satıra bir kişi. Virgülden sonra U024BE7LH gibi bir Slack kullanıcı kimliği, kişiyi Slack'te anar.",
+    "save": "Kaydet",
+    "none": "Çizelge yok",
+    "noneDetail": "Bildirimlerin nöbetteki kişiyi söylemesi için bir çizelge oluştur.",
+    "now": "Şu an nöbette {{who}}.",
+    "notStarted": "İlk nöbeti henüz başlamadı.",
+    "change": "Değiştir",
+    "delete": "{{name}} çizelgesini sil",
+    "next": "{{name}} için sonraki nöbetler"
+  },
+  "routingPage": {
+    "routing": "Yönlendirme",
+    "description": "Bildirimlerin nereye gittiği. Rotalar sırayla denenir; eşleyicilerinin hepsi uyan ilk rota uyarıyı alır.",
+    "contactPoints": "İletişim noktaları",
+    "contactPointsDetail": "Adresleri mühürlü tutulur ve bir daha tam gösterilmez. Yalnızca yöneticiler ekleyip silebilir.",
+    "name": "Ad",
+    "kind": "Tür",
+    "target": "Gönderdiği yer",
+    "last": "Son gönderim",
+    "test": "Dene",
+    "testOk": "Test gönderildi",
+    "deleteContact": "{{name}} noktasını sil",
+    "noContacts": "İletişim noktası yok",
+    "noContactsDetail": "Bir Slack ya da Teams kanalı veya bir webhook ekle.",
+    "addContact": "İletişim noktası ekle",
+    "url": "Adres",
+    "routes": "Rotalar",
+    "routesDetail": "Aynı sorunun etiketlerine göre grupla; örneğin alertname ve cluster. Biri üstlenene kadar tekrarla; kimse üstlenmezse eskale et.",
+    "noRoutes": "Rota yok: hiçbir şeyden kimseye haber verilmiyor.",
+    "routeN": "Rota {{n}}",
+    "routeName": "Veritabanı ekibi",
+    "sendTo": "Gönderilecek yer",
+    "schedule": "Nöbet çizelgesi",
+    "noSchedule": "Çizelge yok",
+    "when": "Uyarının etiketleri",
+    "groupBy": "Gruplama",
+    "repeat": "Tekrar (dakika)",
+    "escalateAfter": "Eskalasyon (dakika sonra)",
+    "never": "Hiç",
+    "escalateTo": "Eskalasyon hedefi",
+    "nobody": "Hiç kimse",
+    "up": "Yukarı",
+    "down": "Aşağı",
+    "remove": "Kaldır",
+    "addRoute": "Rota ekle",
+    "save": "Rotaları kaydet"
+  },
+  "historyPage": {
+    "history": "Geçmiş",
+    "description": "Gönderilen her bildirim, en yenisi önce, ve ulaşıp ulaşmadığı.",
+    "when": "Ne zaman",
+    "kind": "Tür",
+    "group": "Grup",
+    "to": "Alıcı",
+    "result": "Sonuç",
+    "sent": "Gönderildi",
+    "failed": "Ulaşmadı",
+    "none": "Gönderilen bir şey yok"
+  },
+  "setupPage": {
+    "setup": "Kurulum",
+    "description": "Uyarıların Alerts'e nasıl ulaştığı. Her biri ALERTS_INGEST_TOKEN'ı ya da editor rolündeki bir API belirtecini ister.",
+    "prometheus": "Prometheus ve vmalert",
+    "prometheusDetail": "Uyarı kuralların olduğu yerde kalır: Alerts, onların uyarılarını bir Alertmanager gibi alır.",
+    "script": "Bir betik ya da ürün",
+    "scriptDetail": "Uyarı sürdükçe yeniden gönder; gönderilmezse beş dakika sonra ya da endsAt anında çözülür.",
+    "alertmanager": "Kullandığın bir Alertmanager",
+    "alertmanagerDetail": "Onun webhook'u da her uyarının durumuyla birlikte çalışır."
+  },
+  "settingsPage": {
+    "adminsOnly": "Yalnızca yöneticiler",
+    "askAnAdmin": "Bu alerts'in bir yöneticisine sor.",
+    "signOut": "Oturumu kapat",
+    "account": {
+      "title": "Hesap",
+      "description": "Profilin, parolan, iki adımlı doğrulama ve oturumunun açık olduğu yerler."
+    },
+    "members": {
+      "title": "Üyeler",
+      "description": "Bu alerts'e kimin hangi rolle girebileceği. İzleyiciler her şeyi görür; editörler ayrıca üstlenir, susturur, çizelgeleri tutar ve iletişim noktalarını dener; yöneticiler ayrıca iletişim noktası ekler, rotaları değiştirir, üyeleri ve belirteçleri yönetir."
+    },
+    "signin": {
+      "title": "Oturum açma",
+      "description": "OpenAsy Identity, Keycloak ya da Microsoft Entra ID gibi, kişilerin oturum açabileceği kimlik sağlayıcıları ve hangi gruplarının hangi rolü verdiği."
+    },
+    "tokens": {
+      "title": "API belirteçleri",
+      "description": "Betikler ve CI için. Her belirtecin bir rolü ve bir bitiş tarihi vardır; gizli değer bir kez gösterilir."
+    }
+  }
+}

@@ -1,0 +1,250 @@
+{
+  "product": {
+    "overview": "Übersicht",
+    "groups": "Aktiv",
+    "silences": "Stummschaltungen",
+    "oncall": "Bereitschaft",
+    "routing": "Weiterleitung",
+    "history": "Verlauf",
+    "setup": "Einrichtung",
+    "members": "Mitglieder",
+    "signIn": "Anmeldung",
+    "apiTokens": "API-Token",
+    "account": "Konto",
+    "loading": "Wird geladen",
+    "reading": "Aktive Alarme und Bereitschaft werden gelesen."
+  },
+  "alertStates": {
+    "firing": "Aktiv",
+    "silenced": "Stumm",
+    "resolved": "Behoben"
+  },
+  "silenceStates": {
+    "active": "Aktiv",
+    "pending": "Beginnt später",
+    "expired": "Beendet"
+  },
+  "kinds": {
+    "firing": "Alarm",
+    "repeat": "Wiederholung",
+    "escalation": "Eskalation",
+    "resolved": "Behoben",
+    "test": "Test"
+  },
+  "contactKinds": {
+    "slack": "Slack",
+    "teams": "Teams",
+    "webhook": "Webhook"
+  },
+  "contactHints": {
+    "slack": "Ein eingehender Webhook einer Slack-App: https://hooks.slack.com/services/…",
+    "teams": "Ein Teams-Workflow, der eine gesendete Karte in einem Kanal postet.",
+    "webhook": "Jede Adresse: Sie erhält die ganze Gruppe als JSON, etwa für einen Telefon- oder SMS-Anbieter."
+  },
+  "search": {
+    "group": "Alarm"
+  },
+  "matchers": {
+    "label": "Label",
+    "op": "Ist",
+    "value": "Wert",
+    "remove": "Diesen Matcher entfernen",
+    "add": "Matcher hinzufügen"
+  },
+  "overviewPage": {
+    "overview": "Übersicht",
+    "description": "Was jetzt aktiv ist, wer Bereitschaft hat und was gesendet wurde.",
+    "failed_one": "{{count}} Benachrichtigung kam am letzten Tag nicht an",
+    "failed_other": "{{count}} Benachrichtigungen kamen am letzten Tag nicht an",
+    "failedDetail": "Über diese Alarme wurde niemand informiert. Prüfe die Kontaktstelle: Ihr Webhook wurde vielleicht entfernt.",
+    "see": "Welche",
+    "unrouted_one": "{{count}} Gruppe ist aktiv, die keine Route nimmt",
+    "unrouted_other": "{{count}} Gruppen sind aktiv, die keine Route nimmt",
+    "unroutedDetail": "Niemand wird informiert. Füge zuletzt eine Route ohne Matcher hinzu, die alles Übrige nimmt.",
+    "firing": "Aktiv",
+    "alertsCount_one": "{{count}} Alarm",
+    "alertsCount_other": "{{count}} Alarme",
+    "unacknowledged": "Nicht übernommen",
+    "silenced": "Stumm",
+    "silencesCount_one": "{{count}} Stummschaltung",
+    "silencesCount_other": "{{count}} Stummschaltungen",
+    "sent24h": "Gesendet, 24 h",
+    "firingNow": "Jetzt aktiv",
+    "quiet": "Nichts ist aktiv",
+    "quietDetail": "Wenn Prometheus oder ein Produkt einen Alarm sendet, erscheint er hier.",
+    "onCallNow": "Jetzt in Bereitschaft",
+    "noSchedules": "Keine Dienstpläne",
+    "perHour": "Benachrichtigungen pro Stunde",
+    "perHourDetail": "Die letzten 24 Stunden, ohne Tests.",
+    "sent": "Gesendet"
+  },
+  "welcomePage": {
+    "getStarted": "Erste Schritte",
+    "description": "Alerts nimmt Alarme von Prometheus, Produkten und Skripten an, gruppiert die eines Problems und informiert, wer Bereitschaft hat.",
+    "steps": "Vier Schritte",
+    "step1": "Füge unter Weiterleitung eine Kontaktstelle hinzu: einen Slack- oder Teams-Kanal oder einen Webhook.",
+    "step2": "Füge eine Route hinzu, die dorthin sendet. Eine Route ohne Matcher nimmt jeden Alarm.",
+    "step3": "Lege unter Bereitschaft einen Dienstplan an, damit jede Benachrichtigung die Person in Bereitschaft nennt.",
+    "step4": "Trage Alerts in Prometheus als Alertmanager ein, oder sende Alarme aus einem Skript. Siehe Einrichtung.",
+    "alreadyFiring_one": "{{count}} Alarm ist schon aktiv, und niemand wird informiert, bis eine Route ihn nimmt",
+    "alreadyFiring_other": "{{count}} Alarme sind schon aktiv, und niemand wird informiert, bis eine Route sie nimmt"
+  },
+  "groupsPage": {
+    "groups": "Aktiv",
+    "description": "Alarme eines Problems, so wie Personen informiert werden: nach den Labels der Route gruppiert.",
+    "group": "Gruppe",
+    "state": "Zustand",
+    "alerts": "Alarme",
+    "route": "Route",
+    "unrouted": "Keine Route",
+    "who": "Wer",
+    "ackedBy": "Von {{who}} übernommen",
+    "onCall": "{{who}} in Bereitschaft",
+    "since": "Seit",
+    "all": "Alle",
+    "noneDetail": "Wähle einen anderen Zustand."
+  },
+  "groupPage": {
+    "notFound": "Gruppe nicht gefunden",
+    "notFoundDetail": "Ihre Alarme sind vor über einer Stunde behoben worden, oder es gab sie nie.",
+    "back": "Zurück zu den aktiven",
+    "description": "Route {{route}}, seit {{since}}.",
+    "unrouted": "Keine Route nimmt diese Alarme, daher wird niemand informiert.",
+    "ack": "Übernehmen",
+    "unack": "Zurücknehmen",
+    "silence": "Stummschalten",
+    "acked": "Von {{who}} am {{when}} übernommen",
+    "ackedDetail": "Keine Wiederholung und keine Eskalation, bis ein neuer Alarm in die Gruppe kommt.",
+    "onCall": "In Bereitschaft: {{who}}",
+    "alert": "Alarm",
+    "alerts": "Alarme",
+    "notifications": "Benachrichtigungen",
+    "noNotifications": "Noch niemand informiert",
+    "noNotificationsDetail": "Eine Gruppe wird nach der Gruppenwartezeit gemeldet, 30 Sekunden, wenn nichts anderes eingestellt ist."
+  },
+  "silencesPage": {
+    "silences": "Stummschaltungen",
+    "description": "Wartungsfenster. Eine Stummschaltung stoppt Benachrichtigungen, nie die Alarme: Sie bleiben sichtbar.",
+    "new": "Neue Stummschaltung",
+    "newDetail": "Alarme, deren Labels zu jedem Matcher passen, werden stummgeschaltet.",
+    "for": "Für",
+    "hours_one": "{{count}} Stunde",
+    "hours_other": "{{count}} Stunden",
+    "comment": "Warum",
+    "commentPlaceholder": "Plattentausch auf db-1",
+    "create": "Stummschalten",
+    "matchers": "Matcher",
+    "state": "Zustand",
+    "silenced": "Stumm",
+    "ends": "Endet",
+    "end": "Jetzt beenden",
+    "none": "Keine Stummschaltungen"
+  },
+  "oncallPage": {
+    "oncall": "Bereitschaft",
+    "description": "Wer Bereitschaft hat: Mitglieder wechseln sich ab, und Benachrichtigungen nennen die Person in Bereitschaft.",
+    "new": "Neuer Dienstplan",
+    "edit": "{{name}} ändern",
+    "name": "Name",
+    "namePlaceholder": "Datenbank",
+    "shift": "Jede Schicht",
+    "shifts": {
+      "12": "12 Stunden",
+      "24": "Ein Tag",
+      "168": "Eine Woche",
+      "336": "Zwei Wochen"
+    },
+    "start": "Erste Schicht beginnt",
+    "startHint": "Leer gelassen: jetzt.",
+    "members": "Mitglieder, der Reihe nach",
+    "membersHint": "Eine Person pro Zeile. Nach einem Komma erwähnt eine Slack-User-ID wie U024BE7LH die Person in Slack.",
+    "save": "Speichern",
+    "none": "Keine Dienstpläne",
+    "noneDetail": "Lege einen an, damit Benachrichtigungen sagen, wer Bereitschaft hat.",
+    "now": "{{who}} hat jetzt Bereitschaft.",
+    "notStarted": "Die erste Schicht hat noch nicht begonnen.",
+    "change": "Ändern",
+    "delete": "{{name}} löschen",
+    "next": "Nächste Schichten von {{name}}"
+  },
+  "routingPage": {
+    "routing": "Weiterleitung",
+    "description": "Wohin Benachrichtigungen gehen. Routen werden der Reihe nach geprüft; die erste, deren Matcher alle passen, nimmt den Alarm.",
+    "contactPoints": "Kontaktstellen",
+    "contactPointsDetail": "Ihre Adressen werden versiegelt aufbewahrt und nie wieder vollständig gezeigt. Nur Admins fügen sie hinzu oder löschen sie.",
+    "name": "Name",
+    "kind": "Art",
+    "target": "Sendet an",
+    "last": "Zuletzt gesendet",
+    "test": "Testen",
+    "testOk": "Test gesendet",
+    "deleteContact": "{{name}} löschen",
+    "noContacts": "Keine Kontaktstellen",
+    "noContactsDetail": "Füge einen Slack- oder Teams-Kanal oder einen Webhook hinzu.",
+    "addContact": "Kontaktstelle hinzufügen",
+    "url": "Adresse",
+    "routes": "Routen",
+    "routesDetail": "Gruppiere nach den Labels eines Problems, etwa alertname und cluster. Wiederhole, bis jemand übernimmt; eskaliere, wenn niemand es tut.",
+    "noRoutes": "Keine Routen: Niemand wird über irgendetwas informiert.",
+    "routeN": "Route {{n}}",
+    "routeName": "Datenbank-Team",
+    "sendTo": "Senden an",
+    "schedule": "Bereitschaft aus",
+    "noSchedule": "Kein Dienstplan",
+    "when": "Wenn der Alarm hat",
+    "groupBy": "Gruppieren nach",
+    "repeat": "Wiederholen alle (Minuten)",
+    "escalateAfter": "Eskalieren nach (Minuten)",
+    "never": "Nie",
+    "escalateTo": "Eskalieren an",
+    "nobody": "Niemanden",
+    "up": "Hoch",
+    "down": "Runter",
+    "remove": "Entfernen",
+    "addRoute": "Route hinzufügen",
+    "save": "Routen speichern"
+  },
+  "historyPage": {
+    "history": "Verlauf",
+    "description": "Jede gesendete Benachrichtigung, die neueste zuerst, und ob sie ankam.",
+    "when": "Wann",
+    "kind": "Art",
+    "group": "Gruppe",
+    "to": "An",
+    "result": "Ergebnis",
+    "sent": "Gesendet",
+    "failed": "Nicht angekommen",
+    "none": "Nichts gesendet"
+  },
+  "setupPage": {
+    "setup": "Einrichtung",
+    "description": "Wie Alarme zu Alerts gelangen. Jeder Weg braucht ALERTS_INGEST_TOKEN oder ein API-Token mit der Rolle Editor.",
+    "prometheus": "Prometheus und vmalert",
+    "prometheusDetail": "Deine Alarmregeln bleiben, wo sie sind: Alerts nimmt ihre Alarme wie ein Alertmanager an.",
+    "script": "Ein Skript oder Produkt",
+    "scriptDetail": "Sende den Alarm erneut, solange er gilt; ohne neue Sendung ist er nach fünf Minuten behoben, oder zu seinem endsAt.",
+    "alertmanager": "Ein Alertmanager, den du behältst",
+    "alertmanagerDetail": "Sein Webhook funktioniert auch, mit dem Status jedes Alarms."
+  },
+  "settingsPage": {
+    "adminsOnly": "Nur für Admins",
+    "askAnAdmin": "Frage einen Admin dieses alerts.",
+    "signOut": "Abmelden",
+    "account": {
+      "title": "Konto",
+      "description": "Dein Profil, Passwort, die Zwei-Schritt-Verifizierung und wo du angemeldet bist."
+    },
+    "members": {
+      "title": "Mitglieder",
+      "description": "Wer sich bei diesem alerts anmelden kann, und mit welcher Rolle. Viewer sehen alles; Editoren übernehmen außerdem, schalten stumm, pflegen Dienstpläne und testen Kontaktstellen; Admins fügen außerdem Kontaktstellen hinzu, ändern Routen und verwalten Mitglieder und Token."
+    },
+    "signin": {
+      "title": "Anmeldung",
+      "description": "Identitätsanbieter, mit denen sich Personen anmelden können, etwa OpenAsy Identity, Keycloak oder Microsoft Entra ID, und welche ihrer Gruppen welche Rolle geben."
+    },
+    "tokens": {
+      "title": "API-Token",
+      "description": "Für Skripte und CI. Jedes Token hat eine Rolle und ein Ablaufdatum; das Geheimnis wird einmal angezeigt."
+    }
+  }
+}
