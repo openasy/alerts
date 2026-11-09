@@ -6,7 +6,7 @@
 #   docker compose logs alerts | grep 'no owner yet'   # the one-time link that creates the owner account
 services:
   alerts:
-    image: ghcr.io/openasy/alerts:0.1.0
+    image: ghcr.io/openasy/alerts:0.1.1
     restart: unless-stopped
     read_only: true
     cap_drop: [ALL]
